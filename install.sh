@@ -6,7 +6,9 @@ set -euo pipefail
 cd "$(dirname "$(readlink -f "$0")")"
 REPO=$PWD
 BACKUP=$HOME/.dotfiles-backup-$(date +%Y%m%d-%H%M%S)
-FILES=(.vimrc .vim/colors/monokai-chris.vim .tmux.conf .zshrc .config/i3/config)
+FILES=(.vimrc .vim/colors/monokai-chris.vim .tmux.conf .zshrc .config/i3/config .config/i3/startup.py
+       .config/kitty/kitty.conf .config/kitty/current-theme.conf
+       .config/gtk-3.0/settings.ini .config/gtk-4.0/settings.ini .gtkrc-2.0 .fehbg)
 
 for f in "${FILES[@]}"; do
     dst=$HOME/$f

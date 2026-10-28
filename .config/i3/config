@@ -35,6 +35,27 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Monitors (arandr layout, retried), wallpaper, kitty+tmux, Firefox, Joplin, Thunderbird after Proton Bridge
+exec --no-startup-id ~/.config/i3/startup.py
+
+# Left monitor: 1 terminal, 3 work browser, 6 notes. Right monitor: 2 browser, 4 mail.
+workspace 1 output HDMI-1
+workspace 3 output HDMI-1
+workspace 6 output HDMI-1
+workspace 2 output VGA-1
+workspace 4 output VGA-1
+assign [class="^startup-tmux$"] 1
+assign [class="(?i)^joplin$"] 6
+assign [class="(?i)^thunderbird"] 4
+
+# Screenshots: Print = select an area, Shift+Print = whole screen to ~/Pictures
+bindsym Print exec --no-startup-id flameshot gui
+bindsym Shift+Print exec --no-startup-id flameshot full -p ~/Pictures
+
+# Clipboard history (CopyQ): Mod+Shift+v opens it
+exec --no-startup-id copyq
+bindsym $mod+Shift+v exec --no-startup-id copyq toggle
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status

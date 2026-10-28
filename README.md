@@ -23,3 +23,25 @@ Prefix `Ctrl+A`; `|` and `-` split in the current directory; sessions are saved 
 (tmux-resurrect + continuum). After the first install: prefix + `I` installs the plugins.
 
 `tmux.sh` opens a few named windows.
+
+## i3
+
+`startup.py` runs once per login: applies the monitor layout saved with arandr
+(`~/.screenlayout/i3.sh`, machine-specific, retried while the monitors wake up), sets the
+wallpaper (`.fehbg`) and opens the apps on their workspaces:
+
+| left monitor (HDMI-1) | right monitor (VGA-1) |
+|---|---|
+| 1: kitty + tmux (sessions restored by continuum) | 2: Firefox, the other window |
+| 3: Firefox, the work window (GitLab, Slack...) | 4: Thunderbird, started once Proton Mail Bridge listens |
+| 6: Joplin | |
+
+| | |
+|---|---|
+| `Print` / `Shift+Print` | flameshot: select an area / whole screen to `~/Pictures` |
+| `$mod+Shift+v` | CopyQ clipboard history |
+
+## kitty, GTK
+
+kitty colours in `current-theme.conf`; GTK 2/3/4 dark (Adwaita-dark, Papirus-Dark icons:
+`apt install gnome-themes-extra papirus-icon-theme`).
