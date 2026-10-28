@@ -45,7 +45,7 @@ workspace 6 output HDMI-1
 workspace 2 output VGA-1
 workspace 4 output VGA-1
 assign [class="^startup-tmux$"] 1
-assign [class="(?i)^joplin$"] 6
+assign [class="(?i)joplin"] 6
 assign [class="(?i)^thunderbird"] 4
 
 # Screenshots: Print = select an area, Shift+Print = whole screen to ~/Pictures
