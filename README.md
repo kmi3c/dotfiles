@@ -16,6 +16,9 @@ downloads the Polish spell file and installs the vim and tmux plugins. Safe to r
 | `Ctrl+P` / `\b` / `\g` | fzf: files / buffers / text in files (needs `fzf` and `ripgrep`) |
 | `za`, `zR`, `zM` | folding by indent, files open unfolded |
 | `F7`, `z=` | spelling pl+en on/off, suggestions |
+| `:Gblame`, `:Gstatus`, `:Gdiff`, `:Glog` | git through fugitive (old names kept as aliases of `:Git blame`, `:Git`...) |
+| `\gs` `\gb` `\gd` `\gc` `\gl` `\gp` `\gr` `\gw` `\gi` | git status, blame, diff, commit, log, push, read, write, add -p |
+| `\gg` | gitgutter: changed lines in the sign column on/off |
 
 ## tmux
 

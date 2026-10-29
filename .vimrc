@@ -11,6 +11,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " --- basics -----------------------------------------------------------------
@@ -45,6 +47,25 @@ let NERDTreeIgnore = ['\.swp$', '\~$', '^\.git$']
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
+
+" --- git: fugitive + gitgutter (changed lines in the sign column) ---------------
+" fugitive dropped the old command names; keep them, they are in the fingers
+command! Gblame Git blame
+command! Gstatus Git
+command! Gcommit Git commit
+command! Glog Gclog
+command! Gdiff Gdiffsplit
+nnoremap <silent> <leader>gs :Git<CR>
+nnoremap <silent> <leader>gb :Git blame<CR>
+nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+nnoremap <silent> <leader>gc :Git commit<CR>
+nnoremap <silent> <leader>gl :Gclog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <leader>gg :GitGutterToggle<CR>
+set updatetime=300              " gitgutter refreshes the signs after this idle time
 
 " --- folding by indent, files open unfolded: za toggles, zR/zM all ----------
 set foldmethod=indent
