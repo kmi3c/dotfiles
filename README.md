@@ -20,6 +20,9 @@ downloads the Polish spell file and installs the vim and tmux plugins. Safe to r
 | `\gs` `\gb` `\gd` `\gc` `\gl` `\gp` `\gr` `\gw` `\gi` | git status, blame, diff, commit, log, push, read, write, add -p |
 | `\gg` | gitgutter: changed lines in the sign column on/off |
 
+fzf lists files with `fd` (`apt install fd-find`, `FZF_DEFAULT_COMMAND` in `.zshrc`): hidden files
+included, symlinked directories not followed, `.git`, `node_modules`, caches and `stary-home` skipped.
+
 ## tmux
 
 Prefix `Ctrl+A`; `|` and `-` split in the current directory; sessions are saved and restored

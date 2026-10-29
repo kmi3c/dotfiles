@@ -125,3 +125,10 @@ fpath=("/home/kmi3c/.local/share/zsh/site-functions" $fpath)
 HISTSIZE=10000000
 SAVEHIST=10000000
 setopt hist_ignore_space    # a command starting with a space is not saved (e.g. with a secret)
+
+# fzf lists files with fd: fast, hidden files included, symlinked dirs not followed (~/Downloads
+# points at the whole data disk), noise skipped. Also used by Ctrl+P / :Files in vim.
+if command -v fdfind >/dev/null; then
+  export FZF_DEFAULT_COMMAND='fdfind --type f --type l --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude .thunderbird --exclude stary-home --exclude .claude/jobs --exclude .claude/file-history'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
