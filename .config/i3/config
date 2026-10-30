@@ -47,6 +47,8 @@ workspace 4 output VGA-1
 assign [class="^startup-tmux$"] 1
 assign [class="(?i)joplin"] 6
 assign [class="(?i)^thunderbird"] 4
+# Chromium is the browser Claude drives (Playwright extension), kept out of the way.
+assign [class="(?i)^chromium$"] 9
 
 # Screenshots: Print = select an area, Shift+Print = whole screen to ~/Pictures
 bindsym Print exec --no-startup-id flameshot gui
