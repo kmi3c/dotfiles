@@ -97,13 +97,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /usr/share/rvm/scripts/rvm
+[ -s /usr/share/rvm/scripts/rvm ] && source /usr/share/rvm/scripts/rvm
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/.bash_aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases   # private, not in this repo
 export PATH="$HOME/.local/bin:$PATH"
 
 # Limit Claude memory usage to prevent a single runaway session from
