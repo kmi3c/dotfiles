@@ -29,6 +29,9 @@ set mouse=a
 set clipboard=unnamedplus       " yank/paste with the system clipboard (vim-gtk3)
 set undofile undodir=~/.vim/undo//
 silent! call mkdir(expand('~/.vim/undo'), 'p')
+" Swap files in one place; the trailing // puts the full path in the name
+set directory=~/.vim/swap//
+silent! call mkdir(expand('~/.vim/swap'), 'p', 0700)
 " no permanent `set paste`: it turns autoindent off, and vim handles bracketed
 " paste from the terminal by itself
 
