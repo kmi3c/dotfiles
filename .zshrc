@@ -117,6 +117,11 @@ claude() {
     -- ~/.local/bin/claude "$@"
 }
 
+# Separate tmux server for Jarvis (hub + user sessions).
+# Absolute tmux path: continuum must not count this server when it restores the default one.
+_agents_tmux() { TMUX= /usr/bin/tmux -L "$1" -f /var/apps/jarvis/tools/tmux.conf "${@:2}"; }
+tmux-jarvis() { _agents_tmux jarvis attach -t JARVIS; }
+
 # sentry
 fpath=("/home/kmi3c/.local/share/zsh/site-functions" $fpath)
 
